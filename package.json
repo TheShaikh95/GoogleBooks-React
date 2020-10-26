@@ -1,0 +1,25 @@
+{
+    "name": "thebooksearch",
+    "version": "1.0.0",
+    "description": "The app uses Google book api to search for books and save them to database.",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js",
+      "install-react-client": "cd client && npm install",
+      "build": "cd client && npm run build",
+      "heroku-postbuild": "npm run install-react-client && npm run build",
+      "react-client": "cd client && npm start",
+      "watch-server": "nodemon server.js",
+      "dev": "concurrently -n 'server,client' -c 'yellow,green' \"npm run watch-server\" \"npm run react-client\""
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "mongoose": "^5.10.9"
+    },
+    "devDependencies": {
+      "concurrently": "^5.3.0",
+      "dotenv": "^8.2.0",
+      "nodemon": "^2.0.6"
+    }
+  }
+  
